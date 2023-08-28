@@ -1,0 +1,20 @@
+<!-- SECCION: EXTENDS/IMPORTS DE BOOTSTRAP -->
+{% extends 'bootstrap/base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+<!-- SECCION: HEADER -->
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+<!-- SECCION: BODY -->
+{% block body %}
+    <div class="container">
+        <h1 class="text-center">Nuevo producto</h1>
+        
+        <!-- SECCION: FORM -->
+        <form action="" method="POST">
+            {{ wtf.quick_form(form) }}
+        </form>
+    </div>
+{% endblock %}
