@@ -1,0 +1,82 @@
+APUNTES_PY_14_07_23
+
+-Como ingresar a carpetas en la consola.
+cd (direccion de la carpeta).
+
+-Como clonar o descargar proyectos.
+git clone (url del proyecto en github web)
+
+-Como agregar librerias al proyecto de pyhton con la consola.
+python -m venv venv
+pip intall -r requirements.text
+
+-Como mostrar las dependencias
+pip freeze
+
+-Prender el servidor
+.\venv\Scripts\activate
+
+
+
+-Crear un nuevo directorio.
+mkdir [nombre_nuevo_numero_ficha]
+
+-Ingresar al directorio nuevo creado.
+cd [nombre del directorio recien creado]
+
+-Crear el entorno virtual en el directorio
+python -m venv venv
+
+-Confirmar que se instaló correctamente (deberia salir "venv" en la lista)
+dir
+
+-Activar el entorno virtual... (para desactivar es Ctrl + c)
+.\venv\Scripts\activate
+
+
+
+
+
+
+--------------------------------------------------
+
+PARA TRABAJAR DESDE LA CONSOLA DE PYTHON
+
+-Entrar: python
+-Salir: exit
+
+-from app import app, db, Cliente, Producto, Venta, Detalle
+
+
+-Como crear un contexto
+app.app_context().push()
+
+-Como crear un cliente (Se nombra con el nombre de la clase modelo en python y no de la tabla en la base de datos)
+c = Cliente(username = "", mail = "", password = "") 
+
+
+-Como saber cuantos objetos creados hay
+nombre del modelo
+c (literamente solo se escribe "c")
+
+-Como insertar en base de datos en el contexto
+nombre del modelo . columna del modelo = contenido
+db.session.add(c)
+
+-Como eliminar en base de datos en el contexto
+nombre del modelo . columna del modelo = contenido
+db.session.delete(c)
+
+-Como seleccionar en base de datos 
+nombre del modelo . columna del modelo = contenido
+c1 = Cliente.query.get(id del cliente)
+clientes = Cliente.query.all()
+
+-Como actualizar en base de datos 
+nombre del modelo . columna del modelo = contenido
+c2.username="Ronaldiño"
+
+-Para realizar el commit
+db.session.commit()
+
+

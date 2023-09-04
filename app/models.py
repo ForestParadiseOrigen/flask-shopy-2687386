@@ -15,7 +15,7 @@ class Producto(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     nombre = db.Column(db.String(120), unique = True)
     precio = db.Column(db.Numeric(precision = 10, scale = 2))
-    imagen = db.Column(db.String(120), unique = True)
+    imagen = db.Column(db.String(120))
 
 class Venta(db.Model):
     __tablename__="ventas"

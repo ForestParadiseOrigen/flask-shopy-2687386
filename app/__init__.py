@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from .config import Config
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
@@ -23,3 +23,7 @@ app.register_blueprint(productos)
 
 #Se cita una dependencia despues de llamar a "db" para que "db" pueda ejecutar.
 from .models import Cliente, Venta, Producto, Detalle
+
+@app.route('/prueba')
+def prueba():
+    return render_template('base.html')
